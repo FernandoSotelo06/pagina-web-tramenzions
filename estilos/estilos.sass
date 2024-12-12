@@ -1,0 +1,453 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css')
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css')
+
+/* Variables */
+$color-negro: #000000
+$color-gris: #EDEDEF
+$color-gris-verdoso: #8FA2A0
+$color-blanco: #FFFFFF
+$color-verde-intenso: #00d084
+$color-humo: #F5F5F5
+$color-plomo: #9b9b9b
+$degradado: linear-gradient(to right, #ffffff, #8FA2A0)
+$fuente-titulo: "Poppins", sans-serif
+$fuente-letras: "Libre Franklin", sans-serif
+
+/* Quita el margen y espaciado predeterminado */
+* 
+    margin: 0
+    padding: 0
+
+
+body 
+    font-family: $fuente-titulo
+    line-height: 2
+
+
+h1 
+    text-align: center
+    font-weight: 500
+
+
+h2 
+    font-family: $fuente-letras
+    font-weight: 200
+    font-size: 36px
+    letter-spacing: 5px
+
+
+
+/* Animaciones */
+@keyframes slideInFromTop
+    from 
+        transform: translateY(-100%)
+        opacity: 0
+    to 
+        transform: translateY(0)
+        opacity: 1
+
+@keyframes fadeIn
+    from 
+        opacity: 0
+    to 
+        opacity: 1
+
+@keyframes bounce
+    0%, 100% 
+        transform: translateY(0)
+    50% 
+        transform: translateY(-10px)
+
+@keyframes rotate360
+    from 
+        transform: rotate(0deg)
+    to 
+        transform: rotate(360deg)
+
+@keyframes scaleUp
+    from 
+        transform: scale(0.5)
+    to 
+        transform: scale(1)
+
+@keyframes show 
+    from 
+        opacity: 0
+        transform: scale(0.25)
+    
+    to 
+        opacity: 1
+        transform: scale(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos por identificador */
+#barra-superior 
+    background-color: $color-gris-verdoso
+    color: $color-blanco
+
+    a 
+        color: $color-blanco
+        text-decoration: none
+    
+
+    .fila 
+        display: flex
+        justify-content: space-between
+        max-width: 100%
+    
+
+
+#cabecera 
+    background-color: $color-blanco
+    color: $color-negro
+    position: sticky
+    top: 0
+    width: 100%
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1)
+    z-index: 10000
+
+    .contenedor 
+        max-width: 75%
+        margin: 0 auto
+        padding: 5px 0
+    
+
+    .logo 
+        display: flex
+        justify-content: left
+
+        img 
+            height: 110px
+        
+    
+
+
+/* Estilos de la barra de menú */
+.navbar-nav 
+    .nav-link 
+        font-size: 16px
+        padding: 10px 15px
+        transition: all 0.3s ease-in-out
+        color: $color-negro
+
+        &:hover 
+            background-color: $color-verde-intenso
+            color: $color-gris
+            border-radius: 5px
+            transform: scale(1.1)
+        
+    
+
+    .nav-item.active .nav-link 
+        background-color: $color-gris-verdoso
+        color: $color-gris
+        border-radius: 5px
+    
+
+
+/* Estilos de secciones */
+#fotos, #nosotros, #equipo, #testimonios 
+    background-color: $color-gris
+    text-align: center
+
+
+#servicios 
+    background: $degradado
+    color: $color-negro
+
+    .contenedor 
+        margin: 0 auto
+        text-align: center
+    
+
+    .imagenes-horizontales 
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+    
+#equipo
+    background-color: $color-gris
+
+    .imagenes-equipo
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+
+    .imagen
+        flex: 0 0 calc(25% - 30px)
+        margin: 15px
+        text-align: center
+
+        img
+            max-width: 100%
+            height: auto
+
+#testimonios
+    background-color: $color-gris
+    color: $color-negro
+    text-align: center
+    padding: 40px 0
+
+    .testimonio
+        margin: 20px auto
+        max-width: 600px
+        font-style: italic
+
+    .autor
+        font-weight: bold
+        margin-top: 10px
+
+#horarios-ubicacion 
+    background-color: $color-gris-verdoso
+    color: $color-blanco
+
+
+#galeria 
+    background: $degradado
+    padding: 20px 0
+
+
+#ubicacion 
+    background-color: $color-gris
+    color: $color-gris-verdoso
+    padding-top: 30px
+    padding-bottom: 30px
+
+    a 
+        color: $color-humo
+        text-decoration: none
+    
+
+    h1 
+        font-weight: 900
+        letter-spacing: 5px
+    
+
+    p 
+        margin-bottom: 0px
+    
+
+#pie
+    background-color:$color-gris-verdoso
+    color: $color-blanco
+
+    .contenedor-footer
+     position: relative
+     min-height: 100%
+     max-width: 70%
+     margin-left: 15%
+     margin-right: 15%
+
+    .footer-copy
+     position: static
+     bottom: 0
+     left: 0
+     width: 50%
+     text-align: left
+     padding: 10px 0
+     background-color: $color-gris-verdoso
+
+    .footer-contacto
+     display: flex
+     justify-content: space-between
+     align-items: center
+     padding: 10px 0
+
+    .footer-redes-sociales
+        display: flex
+        justify-content: center
+        align-items: center
+        a
+            color: $color-blanco
+            margin-right: 5px
+            text-decoration: none
+
+            &:hover
+                color: $color-gris
+
+
+/* Clases generales */
+.contenedor, .contenedor-footer 
+    max-width: 70%
+    margin-left: 15%
+    margin-right: 15%
+
+
+.espaciado 
+    padding-top: 90px
+    padding-bottom: 90px
+
+
+.imagenes-horizontales, .contenedor-galeria 
+    display: flex
+    flex-wrap: wrap
+
+
+.imagen 
+    width: 33%
+    padding: 10px
+    box-sizing: border-box
+    text-align: center
+
+    &:hover 
+        transform: translateY(-5px)
+    
+
+    img 
+        max-width: 100%
+        height: auto
+    
+
+    i 
+        font-size: 24px
+        margin-bottom: 10px
+        display: block
+    
+
+    p 
+        margin-bottom: 5px
+    
+
+
+.contenedor-galeria img 
+    width: 400px
+    height: 300px
+    object-fit: cover
+    margin: 10px
+    border-radius: 5px
+    transition: filter 0.3s ease, transform 0.3s ease
+
+    &:hover 
+        filter: grayscale(100%)
+        transform: scale(1.1)
+  
+
+
+/* Estilos del pie de página */
+.footer-copy 
+    position: static
+    bottom: 0
+    left: 0
+    width: 50%
+    text-align: left
+    padding: 10px 0
+    background-color: $color-gris-verdoso
+
+
+.footer-contacto 
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px 0
+
+    .direccion,
+    .correo,
+    .telefono,
+    .horarios 
+        flex: 1
+        text-align: center
+    
+
+
+.footer-redes-sociales 
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 10px 0
+
+    a 
+        color: $color-blanco
+        margin-right: 5px
+        text-decoration: none
+
+        &:hover 
+            color: $color-gris
+        
+    
+
+
+/* Botón para volver arriba */
+.boton-ir-arriba 
+    text-decoration: none
+    width: 40px
+    height: 40px
+    background-color: $color-verde-intenso
+    color: $color-humo
+    border-radius: 50%
+    border: 1px solid $color-plomo
+    box-shadow: 0px 0px 15px $color-verde-intenso
+    position: fixed
+    bottom: 30px
+    right: 30px
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    transition: all 0.3s ease-in-out
+
+    &:hover 
+        background-color: $color-blanco
+        color: $color-plomo
+        transform: translateY(-5px)
+    
+
+.navbar-brand 
+    width: 200px
+
+
+.navbar-collapse 
+    justify-content: flex-end
+
+
+.nav-link 
+    background-color: $color-blanco
+    color: $color-humo
+    margin: 0px 5px
+    border-radius: 10px
+    transition: all 0.3s ease-in-out
+
+    &:hover 
+        background-color: $color-plomo
+        color: $color-humo
+    
+
+
+.active 
+    background-color: $color-verde-intenso
+    color: $color-negro !important
+
+@keyframes show 
+    from 
+        opacity: 0
+        transform: scale(0.25)
+    
+    to 
+        opacity: 1
+        transform: scale(1)
+
+
+img 
+    view-timeline-name: --image
+    view-timeline-axis: block
+
+    animation-timeline: --image
+    animation-name: show
+    animation-range: entry 25% cover 30%
+    animation-fill-mode: both
+
+}

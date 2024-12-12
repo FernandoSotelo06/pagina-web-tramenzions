@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/a2fbbeb1d0.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet/less" type="text/css" href="../estilos/styles.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    
+    
+    <title>Tramezzinos - Platillos</title>
+</head>
+<body>
+<!-- Barra superior con elementos de contacto -->
+<div id="barra-superior" class="bg-teal-700 text-white">
+    <div class="contenedor mx-auto px-4 py-2">
+        <div class="fila flex justify-between items-center">
+            <!-- Sección de contacto -->
+            <div class="contacto space-x-4 flex items-center">
+                <a href="tel:+51979832209" class="flex items-center text-sm hover:text-yellow-400 transition-colors">
+                    <i class="fas fa-phone-alt mr-2"></i>+51 979 832 209
+                </a>
+                <a href="mailto:tramezzinos.tallergastronomico@gmail.com" class="flex items-center text-sm hover:text-yellow-400 transition-colors">
+                    <i class="fas fa-envelope mr-2"></i>tramezzinos.tallergastronomico@gmail.com
+                </a>
+            </div>
+
+            <!-- Sección de redes sociales -->
+            <div class="redes-sociales flex space-x-4">
+                <a target="_blank" href="https://www.facebook.com/TramezzinosTallerGastronomico" class="hover:text-yellow-400 transition-colors">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a target="_blank" href="https://www.instagram.com/tramezzinos/" class="hover:text-yellow-400 transition-colors">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a target="_blank" href="https://www.tiktok.com/@tramezzinos" class="hover:text-yellow-400 transition-colors">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a target="_blank" href="https://www.youtube.com/@miguelangelTramezzinos" class="hover:text-yellow-400 transition-colors">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cabecera -->
+<header id="cabecera" class="bg-white shadow-md">
+    <div class="contenedor mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="d-flex justify-content-between items-center py-4">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../imagenes/logo.jpg" alt="Logo FancyFood" class="h-12 w-auto">
+                </a>
+            </div>
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button 
+                        class="navbar-toggler text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#navbarNav" 
+                        aria-controls="navbarNav" 
+                        aria-expanded="false" 
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Menú principal -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex flex-col lg:flex-row lg:space-x-4">
+                            <li class="nav-item">
+                                <a 
+                                    class="nav-link text-gray-700 hover:text-gray-900 font-medium transition" 
+                                    href="index.html"
+                                >
+                                    Inicio
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a 
+                                    class="nav-link active text-gray-700 hover:text-gray-900 font-medium transition" 
+                                    href="menu.html"
+                                >
+                                    Menu
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<!-- Sección de Promociones con Carrusel -->
+<section id="promociones">
+    <div class="container">
+        <h2>¡Promociones Especiales!</h2>
+        
+        <!-- Carrusel de Promociones -->
+        <div class="promo-carousel">
+            <div class="promo-slider">
+                <!-- Promoción 1 -->
+                <div class="promo-card">
+                    <img src="../imagenes/promo1.jpg" alt="Promoción 1">
+                    <div class="promo-content">
+                        <h3>2x1 en Platillos Seleccionados</h3>
+                        <p>¡Disfruta el doble con nuestra oferta de 2x1 en los mejores platillos! Solo por tiempo limitado.</p>
+                        <a href="#">¡Aprovechar!</a>
+                    </div>
+                </div>
+                <!-- Promoción 2 -->
+                <div class="promo-card">
+                    <img src="../imagenes/promo2.jpg" alt="Promoción 2">
+                    <div class="promo-content">
+                        <h3>Descuento del 20% en tu Primera Compra</h3>
+                        <p>¡Es tu oportunidad para ahorrar! Obtén un 20% de descuento en tu primera compra con nosotros.</p>
+                        <a href="#">¡Obtenlo Ahora!</a>
+                    </div>
+                </div>
+                <!-- Promoción 3 -->
+                <div class="promo-card">
+                    <img src="../imagenes/promo3.jpg" alt="Promoción 3">
+                    <div class="promo-content">
+                        <h3>Menú Degustación Especial</h3>
+                        <p>Sorprende a tu paladar con nuestro menú degustación especial a un precio increíblemente bajo.</p>
+                        <a href="#">¡Descúbrelo!</a>
+                    </div>
+                </div>
+                <!-- Repetir promociones para bucle -->
+                <div class="promo-card">
+                    <img src="../imagenes/promo4.jpg" alt="Promoción 1">
+                    <div class="promo-content">
+                        <h3>2x1 en Platillos Seleccionados</h3>
+                        <p>¡Disfruta el doble con nuestra oferta de 2x1 en los mejores platillos! Solo por tiempo limitado.</p>
+                        <a href="#">¡Aprovechar!</a>
+                    </div>
+                </div>
+                <div class="promo-card">
+                    <img src="../imagenes/promo5.png" alt="Promoción 2">
+                    <div class="promo-content">
+                        <h3>Descuento del 20% en tu Primera Compra</h3>
+                        <p>¡Es tu oportunidad para ahorrar! Obtén un 20% de descuento en tu primera compra con nosotros.</p>
+                        <a href="#">¡Obtenlo Ahora!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Platillos -->
+<section id="platillos" class="container py-5">
+    <h2 class="center-align mb-4">Nuestros Platillos</h2>
+    <div class="row">
+        <!-- Platillo 1 -->
+        <div class="col s12 m4 l4 mb-4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="../imagenes/lomo.jpg" alt="Lomo Saltado">
+                </div>
+                <div class="card-content center-align">
+                    <h5 class="card-title">Lomo Saltado</h5>
+                    <p>Un clásico peruano, lleno de sabor y tradición.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platillo 2 -->
+        <div class="col s12 m4 l4 mb-4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="../imagenes/plancha.jpeg" alt="Pollo a la Plancha">
+                </div>
+                <div class="card-content center-align">
+                    <h5 class="card-title">Pollo a la Plancha</h5>
+                    <p>Delicioso, jugoso y saludable. Ideal para cualquier ocasión.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platillo 3 -->
+        <div class="col s12 m4 l4 mb-4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="../imagenes/verde.png" alt="Tallarines Verdes">
+                </div>
+                <div class="card-content center-align">
+                    <h5 class="card-title">Tallarines Verdes</h5>
+                    <p>Una explosión de sabor con la frescura del pesto peruano.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platillo 4 -->
+        <div class="col s12 m4 l4 mb-4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="../imagenes/frappe2.jpg" alt="Frappe">
+                </div>
+                <div class="card-content center-align">
+                    <h5 class="card-title">Frappe</h5>
+                    <p>Refrescante, cremoso y perfecto para cualquier momento del día.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platillo 5 -->
+        <div class="col s12 m4 l4 mb-4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="../imagenes/hambu.jpg" alt="Hamburguesa Tradicional">
+                </div>
+                <div class="card-content center-align">
+                    <h5 class="card-title">Hamburguesa Tradicional</h5>
+                    <p>La combinación perfecta de carne jugosa y pan suave. ¡Un clásico!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platillo 6 -->
+        <div class="col s12 m4 l4 mb-4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="../imagenes/alitas.png" alt="Alitas">
+                </div>
+                <div class="card-content center-align">
+                    <h5 class="card-title">Alitas</h5>
+                    <p>Crocantes y sabrosas, acompañadas de salsas irresistibles.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Pie de página -->
+    <footer id="pie" class="mdc-footer">
+        <div class="mdc-footer__content">
+            <!-- Sección de Contacto -->
+            <div class="footer-contacto">
+                <h2>Contacto</h2>
+                <div class="direccion">Dirección: Av. Aymaras 399-A Salamanca, Perú</div>
+                <div class="correo">Correo: <a href="mailto:tramezzinos.tallergastronomico@gmail.com">tramezzinos.tallergastronomico@gmail.com</a></div>
+                <div class="telefono">Teléfono: <a href="tel:+51979832209">+51 979 832 209</a></div>
+                <div class="horarios">Horarios: Lunes-Domingo 8:00am-11:00pm</div>
+            </div>
+    
+            <!-- Sección de Redes Sociales -->
+            <div class="footer-redes-sociales">
+                <h2>Síguenos</h2>
+                <a target="_blank" href="https://www.facebook.com/TramezzinosTallerGastronomico" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a target="_blank" href="https://www.instagram.com/tramezzinos/" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a target="_blank" href="https://www.tiktok.com/@tramezzinos" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a target="_blank" href="https://www.youtube.com/@miguelangelTramezzinos" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+    
+            <!-- Sección de Derechos Reservados -->
+            <div class="footer-copy">
+                <p>© 2024 Tramezzino. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+
+
+</body>
+</html>
+

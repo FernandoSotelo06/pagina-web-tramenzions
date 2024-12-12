@@ -1,0 +1,704 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+/* Variables */
+@color-negro: #000000;
+@color-gris: #EDEDEF;
+@color-gris-verdoso: #8FA2A0;
+@color-blanco: #FFFFFF;
+@color-verde-intenso: #00d084;
+@color-humo: #F5F5F5;
+@fuente-titulo: "Poppins", sans-serif;
+@fuente-letras: "Libre Franklin", sans-serif;
+// Tamaños de fuente
+@font-size-base: 14px;            // Tamaño base del texto
+@font-size-large: 18px;           // Tamaño para encabezados como h2
+@font-size-small: 12px;           // Tamaño para el texto de copyright
+@font-size-icon: 24px;            // Tamaño para iconos sociales grandes
+@font-size-icon-small: 20px;      // Tamaño para iconos sociales pequeños
+
+// Espaciado
+@padding-footer: 40px 20px;
+/* Estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: @fuente-titulo;
+    line-height: 2;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+h2 {
+    font-family: @fuente-letras;
+    font-weight: 200;
+    font-size: 36px;
+    letter-spacing: 5px;
+}
+
+// Estilos para la barra superior
+#barra-superior {
+    background-color: #4F8B8B; 
+    color: #FFFFFF;
+    animation: slideInFromTop 1s ease-out;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;  // Reducir el padding lateral para acercar los elementos
+    padding-right: 10px; // Reducir el padding lateral para acercar los elementos
+  
+    .contenedor {
+      display: flex;
+      justify-content: space-between; // Distribuye los elementos entre el principio y el final
+      align-items: center;
+      width: 100%; // Asegura que la fila ocupe todo el espacio disponible
+      max-width: 1200px; // Limita el ancho máximo del contenedor para evitar que se estire demasiado
+    }
+  
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease, transform 0.3s ease;
+      margin: 0 2px; // Espaciado horizontal entre los enlaces
+  
+      &:hover {
+        color:#00d084; // Color amarillo más brillante
+        transform: scale(1.05); // Efecto de agrandar ligeramente
+      }
+    }
+  
+    .fila {
+      display: flex;
+      justify-content: space-between; // Hace que el contenido se distribuya entre izquierda y derecha
+      align-items: center;
+      width: 100%; // Asegura que la fila ocupe todo el espacio disponible
+  
+      // Sección de contacto (a la izquierda)
+      .contacto {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; // Alinea a la izquierda
+
+      }
+  
+      // Sección de redes sociales (a la derecha)
+      .redes-sociales {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; // Alinea a la derecha
+
+      }
+    }
+  
+    // Animación de entrada para la barra superior
+    @keyframes slideInFromTop {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  
+    // Estilos para hacer que sea completamente responsiva
+    @media (max-width: 768px) {
+      .fila {
+        flex-direction: column; // Los elementos se apilan verticalmente en pantallas pequeñas
+        align-items: center; // Centra los elementos en pantallas pequeñas
+      }
+  
+      .contacto, .redes-sociales {
+        margin-top: 10px;
+        text-align: center;
+      }
+  
+      .contacto a, .redes-sociales a {
+        font-size: 14px;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      padding: 10px;
+      .contacto, .redes-sociales {
+        margin-top: 8px;
+      }
+    }
+  }
+  
+  
+/* Cabecera */
+#cabecera {
+    background-color: @color-blanco;
+    color: @color-negro;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+
+    .contenedor {
+        max-width: 75%;
+        margin: 0 auto;
+        padding: 5px 0;
+    }
+
+    .logo img {
+        height: 110px;
+    }
+}
+
+/* Navegación */
+.navbar-nav {
+    .nav-link {
+        font-size: 16px;
+        padding: 10px 15px;
+        transition: all 0.3s ease-in-out;
+        color: @color-negro;
+
+        &:hover {
+            background-color: @color-verde-intenso;
+            color: @color-negro;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+    }
+
+    .nav-item.active .nav-link {
+        background-color: @color-gris-verdoso;
+        color: @color-negro;
+        border-radius: 5px;
+    }
+}
+
+// Variables (si quieres reutilizar colores)
+@active-bg-color: #00d084;
+@active-text-color: #EDEDEF;
+@link-hover-bg: #00d084;
+@link-hover-text: #EDEDEF;
+
+// Estilo base para los enlaces
+.navbar-nav {
+  .nav-link {
+    font-size: 16px;
+    padding: 10px 15px;
+    color: #000000;
+    transition: all 0.3s ease-in-out;
+    
+    &:hover {
+      background-color: @link-hover-bg;
+      color: @link-hover-text;
+      border-radius: 5px;
+      transform: scale(1.1);
+    }
+  }
+
+  // Estilo cuando el enlace está activo
+  .nav-link.active {
+    background-color: @active-bg-color;
+    color: @active-text-color;
+    border-radius: 5px;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+/* Botón Volver Arriba */
+.boton-ir-arriba {
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    background-color: @color-verde-intenso;
+    color: @color-humo;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: @color-humo;
+        color: @color-verde-intenso;
+        transform: translateY(-5px);
+    }
+}
+
+
+/* Animaciones generales */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Pie (Footer) */
+#pie {
+    background-color: #4F8B8B;
+    color: @color-blanco;
+    padding: @padding-footer;
+    text-align: center;
+    font-family: @fuente-letras;
+    font-size: @font-size-base;
+    line-height: 1.5;
+
+    .mdc-footer__content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-contacto, .footer-redes-sociales, .footer-copy {
+        margin-bottom: 20px;
+    }
+
+    .footer-contacto h2, .footer-redes-sociales h2 {
+        font-size: @font-size-large;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+
+    .footer-contacto div, .footer-copy p {
+        font-size: @font-size-base;
+        line-height: 1.5;
+    }
+
+    .footer-contacto a, .footer-redes-sociales a {
+        color: @color-blanco;
+        text-decoration: none;
+    }
+
+    .footer-redes-sociales a {
+        font-size: @font-size-icon;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+    }
+
+    .footer-redes-sociales a:hover {
+        color: @color-verde-intenso;
+    }
+
+    .footer-copy p {
+        font-size: @font-size-small;
+        color: @color-gris;
+    }
+}
+
+// Media query para pantallas pequeñas
+@media (max-width: 768px) {
+    .footer-contacto, .footer-redes-sociales {
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .footer-redes-sociales a {
+        font-size: @font-size-icon-small;
+    }
+
+    .footer-copy p {
+        font-size: 10px;
+    }
+}
+
+// Estilos adicionales para las links de redes sociales
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    a {
+        color: @color-blanco;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+
+        &:hover {
+            color: @color-verde-intenso;
+        }
+    }
+}
+
+// Estilos para los iconos sociales
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    a {
+        color: @color-blanco;
+        font-size: @font-size-icon-small;
+        transition: color 0.3s;
+
+        &:hover {
+            color: @color-verde-intenso;
+        }
+    }
+}
+
+.servicio img {
+    display: block; /* Elimina márgenes adicionales */
+    width: 100%; /* Ajusta al ancho del contenedor */
+    height: 200px; /* Define un alto uniforme para todas las imágenes */
+    object-fit: cover; /* Recorta y ajusta la imagen para llenar el espacio sin distorsionarla */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    transition: transform 0.3s ease-in-out; /* Añade un efecto suave al interactuar */
+}
+
+.card-img-top {
+    width: 100%; /* Asegura que las imágenes se ajusten al ancho del contenedor */
+    height: 200px; /* Establece una altura uniforme */
+    object-fit: cover; /* Ajusta la imagen dentro del área definida sin distorsionarla */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: transform 0.3s ease-in-out; /* Efecto suave al pasar el mouse */
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05); /* Aumenta ligeramente la imagen al pasar el mouse */
+}
+
+
+
+
+/* Animaciones para las tarjetas */
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos dentro del contenedor */
+    max-width: 300px; /* Limita el ancho máximo de la tarjeta */
+    margin: auto; /* Centra la tarjeta en su fila */
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        background-color: @color-humo; /* Cambia ligeramente el fondo al pasar el mouse */
+
+        img {
+            transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen */
+        }
+
+        h3 {
+            color: @color-verde-intenso; /* Destaca el título al pasar el mouse */
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin: 10px 0;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+    }
+
+    p {
+        font-size: 18px;
+        color: #666;
+        margin: 10px 0;
+        line-height: 1.4;
+        font-weight: 500;
+    }
+}
+
+/* Animaciones generales */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.servicios-grid .servicio {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Animación por retraso para cada tarjeta */
+.servicio:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.servicio:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.servicio:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+
+@media (max-width: 768px) {
+    #barra-superior .fila {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #cabecera .contenedor {
+        max-width: 90%;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    #servicios .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #servicios {
+        padding: 60px 0;
+    }
+
+    #servicios h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    #cabecera .logo img {
+        height: 80px;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    #servicios .servicios-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .servicio {
+        max-width: 100%;
+        margin-bottom: 20px; 
+    }
+
+    #servicios h2 {
+        font-size: 26px; 
+    }
+
+    .contenedor-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links,
+    .social-icons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Variables */
+@card-border-radius: 10px;
+@card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+@card-title-color: #333;
+@card-text-color: #555;
+@card-image-height: 200px;
+@container-padding: 30px;
+
+/* Estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: @fuente-titulo;
+    line-height: 2;
+}
+
+/* Contenedor de Platillos */
+#platillos {
+    .container {
+        padding: @container-padding;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #333;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    /* Row de los Platillos */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .col {
+            margin-bottom: 1.5rem;
+            max-width: 33.33%;
+            flex-basis: 33.33%;
+
+            /* Estilos de la tarjeta */
+.card {
+    border-radius: @card-border-radius;
+    box-shadow: @card-shadow;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out; /* Transición para la animación */
+
+    &:hover {
+        transform: scale(1.05); /* Aumenta el tamaño de la tarjeta al 105% */
+    }
+
+    .card-image {
+        overflow: hidden;
+        height: @card-image-height;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .card-content {
+        padding: 1rem;
+        text-align: center;
+
+        .card-title {
+            font-size: 1.25rem;
+            color: @card-title-color;
+            margin-bottom: 1rem;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: @card-text-color;
+        }
+    }
+}
+
+        }
+    }
+
+    /* Responsividad para tamaños menores a medium */
+    @media (max-width: 768px) {
+        .col {
+            max-width: 100%;
+            flex-basis: 100%;
+        }
+    }
+
+    /* Responsividad para tamaños menores a large */
+    @media (max-width: 992px) {
+        .col {
+            max-width: 50%;
+            flex-basis: 50%;
+        }
+    }
+}
+
+@color-verde: #00d084;
+@color-gris: #F5F5F5;
+@card-border-radius: 10px;
+@card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+#promociones {
+    padding: 50px 0;
+    background-color: @color-gris;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 40px;
+        color: #333;
+    }
+
+    .promo-carousel {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+
+        .promo-slider {
+            display: flex;
+            transition: transform 1s ease-in-out;
+            animation: slide 20s linear infinite;
+        }
+
+        .promo-card {
+            flex: 0 0 30%;
+            max-width: 30%;
+            background-color: #ffffff;
+            border-radius: @card-border-radius;
+            box-shadow: @card-shadow;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            margin-right: 20px;
+
+            img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            .promo-content {
+                padding: 20px;
+                text-align: center;
+
+                h3 {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: #333;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    color: #666;
+                    font-size: 1rem;
+                    margin: 10px 0;
+                }
+
+                a {
+                    text-decoration: none;
+                    background-color: @color-verde;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+}
